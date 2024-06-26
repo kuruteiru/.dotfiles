@@ -1,10 +1,17 @@
 # variables
 set $mod Mod4
+
 set $left h
 set $down j
 set $up k
 set $right l
+
 set $term kitty
+
+set $monitor_right DP-1
+set $monitor_left HDMI-A-1
+set $monitor_primary $monitor_right
+set $monitor_secondary $monitor_left
 
 # application launcher
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
@@ -23,12 +30,12 @@ input {
 
 # output
 output {
-    HDMI-A-1 \
+    $monitor_left \
     	mode 2560x1440@144Hz \
     	position 0,0 \
 	background /usr/share/wallpapers/SuperNova/supernova1.png fill
 
-    DP-1 \
+    $monitor_right \
    	mode 2560x1440@144Hz \
 	position 2560,0 \
 	background /usr/share/wallpapers/SuperNova/supernova2.png fill
@@ -223,7 +230,8 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command while date +'%H:%M:%S %d.%m.%Y' ; do sleep 1; done
 
     colors {
         statusline #ffffff
