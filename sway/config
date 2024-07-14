@@ -219,7 +219,8 @@ bindsym $mod+Alt+b border toggle
 for_window [window_type="dialog"] floating enable
 for_window [window_role="dialog"] floating enable
 
-gaps inner 40
+gaps inner 10
+default_border pixel 2
 
 # sway-bar
 bar {
@@ -231,6 +232,7 @@ bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command swaymsg -t get_inputs | jq -r '.[] | select(.identifier == "kbd_identifier") | .xkb_active_layout_name'
     status_command while date +'%H:%M:%S %d.%m.%Y' ; do sleep 1; done
 
     colors {
