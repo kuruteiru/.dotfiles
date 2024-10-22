@@ -10,9 +10,9 @@ M.ui = {
   hl_add = {},
   hl_override = {},
   changed_themes = {},
-  theme_toggle = { "onedark", "one_light" },
+  -- theme_toggle = { "onedark", "one_light" },
   theme = "onedark", -- default theme
-  transparency = true,
+  transparency = 0,
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
 
   -- https://github.com/NvChad/base46/tree/v2.0/lua/base46/extended_integrations
@@ -22,19 +22,19 @@ M.ui = {
   cmp = {
     icons = true,
     lspkind_text = true,
-    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+    style = "flat_dark", -- default/flat_light/flat_dark/atom/atom_colored
     border_color = "grey_fg", -- only applicable for "default" style, use color names from base30 variables
     selected_item_bg = "colored", -- colored / simple
   },
 
-  telescope = { style = "borderless" }, -- borderless / bordered
+  telescope = { style = "bordered" }, -- borderless / bordered
 
   ------------------------------- nvchad_ui modules -----------------------------
   statusline = {
     theme = "default", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
-    separator_style = "default",
+    separator_style = "arrow",
     overriden_modules = nil,
   },
 
