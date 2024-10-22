@@ -1,3 +1,5 @@
+exec swaylock
+ 
 # variables
 set $mod Mod4
 
@@ -24,7 +26,8 @@ input {
     }
 
     type:pointer { 
-	accel_profile flat
+        accel_profile flat
+        pointer_accel 0.3
     }
 }
 
@@ -32,13 +35,21 @@ input {
 output {
     $monitor_left \
     	mode 2560x1440@144Hz \
-    	position 0,0 \
-	background /usr/share/wallpapers/SuperNova/supernova1.png fill
+        position 0,0 \
+        scale 1 \
+        scale_filter linear \
+        max_render_time 1 \
+        adaptive_sync on \
+        background /usr/share/wallpapers/SuperNova/supernova1.png fill
 
     $monitor_right \
-   	mode 2560x1440@144Hz \
-	position 2560,0 \
-	background /usr/share/wallpapers/SuperNova/supernova2.png fill
+    	mode 2560x1440@144Hz \
+        position 2560,0 \
+        scale 1 \
+        scale_filter linear \
+        max_render_time 1 \
+        adaptive_sync on \
+        background /usr/share/wallpapers/SuperNova/supernova2.png fill
 }
 
 ### Idle configuration
