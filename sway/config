@@ -1,4 +1,4 @@
-exec swaylock
+# exec swaylock
  
 # variables
 set $mod Mod4
@@ -233,27 +233,29 @@ for_window [window_role="dialog"] floating enable
 gaps inner 10
 default_border pixel 2
 
+bar swaybar_command waybar
+
 # sway-bar
-bar {
-    # font 
-    # gaps 20
-    height 20
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-    status_command swaymsg -t get_inputs | jq -r '.[] | select(.identifier == "kbd_identifier") | .xkb_active_layout_name'
-    status_command while date +'%H:%M:%S %d.%m.%Y' ; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        # background #323232
-        # background #000000
-        # background #0c0030
-        # background #252525
-        # background #0d1126
-        background #15161c
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+# bar {
+#     # font 
+#     # gaps 20
+#     height 20
+#     position top
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+#     status_command swaymsg -t get_inputs | jq -r '.[] | select(.identifier == "kbd_identifier") | .xkb_active_layout_name'
+#     status_command while date +'%H:%M:%S %d.%m.%Y' ; do sleep 1; done
+#
+#     colors {
+#         statusline #ffffff
+#         # background #323232
+#         # background #000000
+#         # background #0c0030
+#         # background #252525
+#         # background #0d1126
+#         background #15161c
+#         inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
