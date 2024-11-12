@@ -49,9 +49,11 @@ button:hover {
 }
 
 /* you can set a style on hover for any module like this */
+/*
 #pulseaudio:hover {
     background-color: #a37800;
 }
+*/
 
 #workspaces button {
     padding: 0 5px;
@@ -93,9 +95,12 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
+#language,
 #mpd {
-    padding: 0 10px;
+    padding: 0 15px;
     color: #ffffff;
+    /*border-left: 1px solid #64727D;*/
+    border-left: 2px solid black;
 }
 
 #window,
@@ -113,6 +118,12 @@ button:hover {
     margin-right: 0;
 }
 
+#custom-power {
+    background-color: #f53c3c;
+    padding: 0 5px;
+}
+
+/*
 #clock {
     background-color: #64727D;
 }
@@ -133,8 +144,10 @@ button:hover {
         color: #000000;
     }
 }
+*/
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
+/*
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
@@ -144,9 +157,23 @@ button:hover {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+*/
 
+/*
 #power-profiles-daemon {
     padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    color: #f53c3c;
+}
+
+#power-profiles-daemon.balanced {
+    color: #2980b9;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #2ecc71;
 }
 
 #power-profiles-daemon.performance {
@@ -325,3 +352,4 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+*/

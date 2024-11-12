@@ -11,22 +11,26 @@
         "sway/mode",
         "sway/scratchpad"
     ],
-    // "modules-center": [
-    //     "sway/window"
-    // ],
+    //"modules-center": [
+    //    "sway/window"
+    //],
     "modules-right": [
-        // "idle_inhibitor",
+        //"idle_inhibitor",
         "pulseaudio",
-        // "network",
-        // "power-profiles-daemon",
+        "custom/media",
+        "mpd",
+        //"network",
         "cpu",
         "memory",
         "temperature",
+        "keyboard-state",
         "backlight",
         "sway/language",
+        "power-profiles-daemon",
         "battery",
         "clock",
-        "tray"
+        "custom/power"
+        //"tray"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -104,11 +108,12 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        //"format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d. %m. %Y}"
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": true
     },
     "memory": {
         "format": "{}% "
@@ -165,7 +170,7 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+         "scroll-step": 5, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
