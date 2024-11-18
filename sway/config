@@ -9,10 +9,9 @@ set $right l
 
 set $term kitty
 
-set $monitor_right DP-1
-set $monitor_left HDMI-A-1
-set $monitor_primary $monitor_right
-set $monitor_secondary $monitor_left
+set $laptop eDP-1
+set $monitor_left DP-8
+set $monitor_right DP-9
 
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
@@ -26,27 +25,41 @@ input {
         accel_profile flat
         pointer_accel 0.3
     }
+
+    type:touchpad { }
 }
 
-# output {
-#     $monitor_left \
-#     	mode 2560x1440@144Hz \
-#         position 0,0 \
-#         scale 1 \
-#         scale_filter linear \
-#         max_render_time 1 \
-#         adaptive_sync on \
-#         background /usr/share/wallpapers/black.jpg fill
-#
-#     $monitor_right \
-#     	mode 2560x1440@144Hz \
-#         position 2560,0 \
-#         scale 1 \
-#         scale_filter linear \
-#         max_render_time 1 \
-#         adaptive_sync on \
-#         background /usr/share/wallpapers/black.jpg fill
-# }
+output {
+    $laptop {
+        mode 2880x1800@90Hz
+        scale 1.75
+        background #000000 solid_color
+    }
+
+    $monitor_left {
+    	mode 2560x1440@144Hz
+        position 0,0
+        scale 1
+        scale_filter linear
+        max_render_time 1
+        adaptive_sync on
+        background #000000 solid_color
+    }
+
+    $monitor_right {
+    	mode 2560x1440@144Hz
+        position 2560,0
+        scale 1
+        scale_filter linear
+        max_render_time 1
+        adaptive_sync on
+        background #000000 solid_color
+    }
+}
+
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+exec_always clamshell.sh
 
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
@@ -173,6 +186,17 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+
+# bindsym XF86Messenger exec pactl set-sink-mute @DEFAULT_SINK@ toggle 
+# bindsym XF86Display exec pactl set-sink-mute @DEFAULT_SINK@ toggle 
+# bindsym XF86Favorites exec pactl set-sink-mute @DEFAULT_SINK@ toggle 
 
 include /etc/sway/config.d/*
 
