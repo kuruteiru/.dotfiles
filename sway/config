@@ -26,7 +26,10 @@ input {
         pointer_accel 0.3
     }
 
-    type:touchpad { }
+    type:touchpad {
+        tap enabled
+        natural_scroll enabled
+    }
 }
 
 output {
