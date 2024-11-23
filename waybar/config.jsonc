@@ -22,7 +22,7 @@
         "power-profiles-daemon",
         "battery",
         "clock",
-        "tray",
+        //"tray",
         "custom/power"
     ],
     "sway/mode": {
@@ -138,7 +138,7 @@
             "default": ["", "", ""]
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        //"on-click-right": "pavucontrol"
+        "on-click-right": "pavucontrol"
     },
     "custom/power": {
         "format" : " ⏻ ",
@@ -147,7 +147,7 @@
 		"menu-file": "$HOME/.config/waybar/power_menu.xml",
 		"menu-actions": {
 			"shutdown": "shutdown now",
-			"reboot": "reboot now",
+			"reboot": "reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
