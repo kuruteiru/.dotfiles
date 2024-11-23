@@ -21,8 +21,8 @@
         "sway/language",
         "power-profiles-daemon",
         "battery",
+        "tray",
         "clock",
-        //"tray",
         "custom/power"
     ],
     "sway/mode": {
