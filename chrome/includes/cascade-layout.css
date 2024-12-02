@@ -1,14 +1,10 @@
 :root {
 
-  --toolbarbutton-border-radius: var(--uc-border-radius) !important;
-  --tab-border-radius: var(--uc-border-radius) !important;
-  --arrowpanel-border-radius: var(--uc-border-radius) !important;
+    --toolbarbutton-border-radius: var(--uc-border-radius) !important;
+    --tab-border-radius: var(--uc-border-radius) !important;
+    --arrowpanel-border-radius: var(--uc-border-radius) !important;
 
 }
-
-
-
-
 
 #main-window,
 #toolbar-menubar,
@@ -16,7 +12,6 @@
 #navigator-toolbox,
 #sidebar-box,
 #nav-bar { box-shadow: none !important; }
-
 
 #main-window,
 #toolbar-menubar,
@@ -26,36 +21,43 @@
 #sidebar-box,
 #nav-bar { border: none !important; }
 
-
 /* remove "padding" left and right from tabs */
 .titlebar-spacer { display: none !important; }
 
 /* fix Shield Icon padding */
 #urlbar-input-container[pageproxystate="valid"]
-  > #tracking-protection-icon-container
-  > #tracking-protection-icon-box
-  > #tracking-protection-icon {
+> #tracking-protection-icon-container
+> #tracking-protection-icon-box
+> #tracking-protection-icon {
     padding-bottom: 1px;
 }
 
-
-
-
-
 #PersonalToolbar {
-
-  padding: 6px !important;
-  box-shadow: inset 0 0 50vh rgba(0, 0, 0, var(--uc-darken-toolbar)) !important;;
-
+    padding: 6px !important;
+    box-shadow: inset 0 0 50vh rgba(0, 0, 0, var(--uc-darken-toolbar)) !important;;
 }
 
-
-
-
-
 #statuspanel #statuspanel-label {
+    border: none !important;
+    border-radius: var(--uc-border-radius) !important;
+}
 
-  border: none !important;
-  border-radius: var(--uc-border-radius) !important;
+#nav-bar {
+    order: 1 !important;
+}
 
+#TabsToolbar {
+    order: 2 !important;
+}
+
+#toolbar-menubar {
+    order: 3 !important;
+    display: none !important
+}
+
+#navigator-toolbox {
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+    padding: 0 !important;
 }
