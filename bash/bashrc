@@ -25,3 +25,4 @@ fi
 unset rc
 
 EDITOR=/usr/bin/vim
+alias la="ls -la"
