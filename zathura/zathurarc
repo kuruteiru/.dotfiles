@@ -1,0 +1,11 @@
+map K zoom in
+map J zoom out
+
+set recolor true
+set recolor-keephue true
+set recolor-lightcolor "#000000"
+set recolor-darkcolor "#FFFFFF"
+
+set highlight-transparency 0.5
+# set highlight-color "#2686DA"
+# set highlight-active-color "#A22E39"
