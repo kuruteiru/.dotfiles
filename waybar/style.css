@@ -74,7 +74,8 @@ button:hover {
 
 #workspaces button.urgent {
     /*background-color: #eb4d4b;*/
-    background-color: #900000;
+    background-color: #E42022;
+    /*background-color: #900000;*/
 }
 
 #mode {
@@ -123,8 +124,8 @@ button:hover {
 }
 
 #custom-power {
-    /*background-color: #E42022;*/
-    background-color: #900000;
+    background-color: #E42022;
+    /*background-color: #900000;*/
     padding: 0 5px;
 }
 
