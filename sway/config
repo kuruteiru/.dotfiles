@@ -220,8 +220,14 @@ client.focused #1e2029 #15161c #ffffff #15161c #1e2029
 client.unfocused #15161c #000000 #888888 #15161c #15161c
 client.focused_inactive #15161c #000000 #ffffff #15161c #15161c
 
-for_window [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable 
-for_window [app_id="firefox" title="Picture-in-Picture"] floating enable 
+for_window [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable
+for_window [app_id="firefox" title="Picture-in-Picture"] {
+    floating enable
+    sticky enable
+    resize set width 480 height 270
+    move right 1010px
+    move down 500px
+}
 
 for_window [app_id="pavucontrol"] {
     floating enable
