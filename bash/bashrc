@@ -24,6 +24,33 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+source /usr/share/git-core/contrib/completion/git-prompt.sh
+LOVE='\[\e[38;2;235;111;146m\]'    # #eb6f92
+OVERLAY='\[\e[38;2;57;53;82m\]'     # #393552
+PINE='\[\e[38;2;62;143;176m\]'     # #3e8fb0
+RESET='\[\e[0m\]'
+PROMPT_COLOR='\[\e[38;2;42;39;63m\]'
+__git_ps1_path() {
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+        local repo_name=$(basename $(git rev-parse --show-toplevel))
+        local git_path=$(git rev-parse --show-prefix 2>/dev/null)
+        if [ -n "$git_path" ]; then
+            echo "$repo_name/$git_path" | sed 's:/$::'
+        else
+            echo "$repo_name"
+        fi
+    else
+        echo "${PWD/#$HOME/\~}"
+    fi
+}
+
+PS1="\
+${OVERLAY} ~> ${RESET}\
+${OVERLAY}[${PINE}\$(__git_ps1_path)${OVERLAY}]\
+${OVERLAY}\$(__git_ps1 \" (${LOVE}%s${OVERLAY})\")${RESET}\
+${PROMPT_COLOR} \$ ${RESET}\
+"
+
 EDITOR=/usr/bin/vim
 alias la="ls -la"
 
