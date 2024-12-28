@@ -26,3 +26,7 @@ unset rc
 
 EDITOR=/usr/bin/vim
 alias la="ls -la"
+
+if [ -z "$TMUX" ]; then
+    tmux attach || tmux new-session
+fi
