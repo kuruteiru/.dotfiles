@@ -55,5 +55,5 @@ EDITOR=/usr/bin/vim
 alias la="ls -la"
 
 if [ -z "$TMUX" ]; then
-    tmux attach || tmux new-session
+    tmux attach || tmux new -s root
 fi
