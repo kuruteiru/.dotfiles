@@ -7,7 +7,7 @@ set $down j
 set $up k
 set $right l
 
-set $term kitty
+set $term ghostty
 
 set $laptop eDP-1
 set $monitor_left DP-9

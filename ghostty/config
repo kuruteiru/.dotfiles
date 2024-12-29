@@ -1,0 +1,10 @@
+font-size = 11
+font-family = "JetBrains Mono Nerd Font"
+font-feature = -liga
+font-variation = wght=600
+
+theme = rose-pine
+background = 000000
+
+window-decoration = false
+desktop-notifications = false
