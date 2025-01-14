@@ -10,8 +10,8 @@ set $right l
 set $term ghostty
 
 set $laptop eDP-1
-set $monitor_left DP-9
-set $monitor_right DP-8
+set $monitor_left 'HP Inc. OMEN 27q CNC3291Q3M'
+set $monitor_right 'Lenovo Group Limited G27q-20 U6332BC5'
 
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
@@ -39,7 +39,8 @@ output {
         scale 1.5
         background #000000 solid_color
     }
-$monitor_left {
+
+    $monitor_left {
     	mode 2560x1440@144Hz
         position 0,0
         scale 1
@@ -241,7 +242,7 @@ for_window [app_id="pavucontrol-qt"] {
 
 for_window [app_id="nm-connection-editor"] floating enable, resize set 600 400, move position center
 
-gaps inner 10
+gaps inner 4
 default_border pixel 2
 
 bar swaybar_command waybar
