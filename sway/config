@@ -242,7 +242,7 @@ for_window [app_id="pavucontrol-qt"] {
 
 for_window [app_id="nm-connection-editor"] floating enable, resize set 600 400, move position center
 
-gaps inner 4
+gaps inner 2
 default_border pixel 2
 
 bar swaybar_command waybar
