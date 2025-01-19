@@ -13,7 +13,7 @@ window-padding-balance = true
 window-padding-x = 4,0
 window-padding-y = 4,0
 
-keybind = ctrl+k=scroll_page_up
-keybind = ctrl+j=scroll_page_down
-keybind = ctrl+shift+k=scroll_to_top
-keybind = ctrl+shift+j=scroll_to_bottom
+keybind = ctrl+k=scroll_page_lines:-1
+keybind = ctrl+j=scroll_page_lines:1
+keybind = ctrl+shift+k=scroll_page_fractional:-0.25
+keybind = ctrl+shift+j=scroll_page_fractional:0.25
