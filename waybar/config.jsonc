@@ -15,7 +15,7 @@
 		"disk",
 		"temperature",
 		//"backlight",
-		//"idle_inhibitor",
+		"idle_inhibitor",
 		"bluetooth",
 		"network",
 		"sway/language",
@@ -43,6 +43,7 @@
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
+		"start-activated": true,
 		"format-icons": {
 			"activated": "",
 			"deactivated": ""
@@ -61,13 +62,17 @@
 		"tooltip": true
 	},
 	"memory": {
-		"format": "  {}%"
+		//"format": "  {}%",
+		"format": "  {used:0.1f}GB/{total:0.0f}GB",
+		"tooltip": false
 	},
 	"disk": {
 		"interval": 60,
-		//"format": "{percentage_used:2}% 󰋊",
-		"format": "󰋊 {percentage_used:2}%",
-		"path": "/home/kuruteiru/"
+		//"format": "󰋊 {percentage_used:2}%",
+		"format": "󰋊 {used}/{total}",
+		"tooltip": false,
+		"path": "/home/kuruteiru/",
+		"unit": "GB"
 	},
 	"temperature": {
 		"critical-threshold": 80,
