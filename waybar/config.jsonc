@@ -44,6 +44,7 @@
 	"idle_inhibitor": {
 		"format": "{icon}",
 		"start-activated": true,
+		"tooltip": false,
 		"format-icons": {
 			"activated": "",
 			"deactivated": ""
@@ -58,17 +59,15 @@
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"cpu": {
-		"format": "  {usage}%",
+		"format": " {usage}%",
 		"tooltip": true
 	},
 	"memory": {
-		//"format": "  {}%",
 		"format": "  {used:0.1f}GB/{total:0.0f}GB",
 		"tooltip": false
 	},
 	"disk": {
 		"interval": 60,
-		//"format": "󰋊 {percentage_used:2}%",
 		"format": "󰋊 {used}/{total}",
 		"tooltip": false,
 		"path": "/home/kuruteiru/",
@@ -77,7 +76,6 @@
 	"temperature": {
 		"critical-threshold": 80,
 		"tooltip": false,
-		//"format": "{temperatureC}°C {icon}",
 		"format": "{icon} {temperatureC}°C",
 		"format-icons": [
 			"",
@@ -127,11 +125,17 @@
 		}
 	},
 	"network": {
-		"format-wifi": "",
+		//"interface": "wlp2s0",
+		"format": "{ifname}",
+		"format-wifi": "{icon}",
 		"format-ethernet": "",
-		"format-linked": "{ifname} (No IP) ",
-		"tooltip-format": "{essid}",
-		"format-disconnected": "Disconnected ⚠"
+		"format-disconnected": "󰤭",
+		"tooltip": true,
+		"tooltip-format": "{ifname}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+		"tooltip-format-ethernet": "{ifname}",
+		"tooltip-format-disconnected": "disconnected",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
 		//"on-click": "nm-connection-editor"
 	},
 	"bluetooth": {
