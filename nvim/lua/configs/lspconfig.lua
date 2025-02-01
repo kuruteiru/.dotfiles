@@ -10,7 +10,8 @@ local servers = {
     "eslint",
     "html",
     "jsonls",
-    "cssls"
+    "cssls",
+	"marksman"
 }
 
 for _, lsp in ipairs(servers) do
