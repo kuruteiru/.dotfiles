@@ -61,6 +61,8 @@ output {
     }
 }
 
+exec startup.sh
+
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 exec_always clamshell.sh
