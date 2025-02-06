@@ -8,6 +8,7 @@ set $up k
 set $right l
 
 set $term ghostty
+set $browser zen
 
 set $laptop eDP-1
 set $monitor_left 'HP Inc. OMEN 27q CNC3291Q3M'
@@ -61,7 +62,9 @@ output {
     }
 }
 
-exec startup.sh
+workspace 1
+exec $term
+exec protonvpn-app
 
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
