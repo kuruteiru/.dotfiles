@@ -2,12 +2,12 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
+	. /etc/bashrc
 fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+	PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
@@ -16,11 +16,11 @@ export PATH
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
-    for rc in ~/.bashrc.d/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
-    done
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
 fi
 unset rc
 
@@ -31,17 +31,17 @@ PINE='\[\e[38;2;62;143;176m\]'     # #3e8fb0
 RESET='\[\e[0m\]'
 PROMPT_COLOR='\[\e[38;2;42;39;63m\]'
 __git_ps1_path() {
-    if git rev-parse --git-dir > /dev/null 2>&1; then
-        local repo_name=$(basename $(git rev-parse --show-toplevel))
-        local git_path=$(git rev-parse --show-prefix 2>/dev/null)
-        if [ -n "$git_path" ]; then
-            echo "$repo_name/$git_path" | sed 's:/$::'
-        else
-            echo "$repo_name"
-        fi
-    else
-        echo "${PWD/#$HOME/\~}"
-    fi
+	if git rev-parse --git-dir > /dev/null 2>&1; then
+		local repo_name=$(basename $(git rev-parse --show-toplevel))
+		local git_path=$(git rev-parse --show-prefix 2>/dev/null)
+		if [ -n "$git_path" ]; then
+			echo "$repo_name/$git_path" | sed 's:/$::'
+		else
+			echo "$repo_name"
+		fi
+	else
+		echo "${PWD/#$HOME/\~}"
+	fi
 }
 
 PS1="\
@@ -51,9 +51,13 @@ ${OVERLAY}\$(__git_ps1 \" (${LOVE}%s${OVERLAY})\")${RESET}\
 ${PROMPT_COLOR} \$ ${RESET}\
 "
 
-EDITOR=/usr/bin/vim
+EDITOR=/usr/bin/nvim
 alias la="ls -la"
+alias vim="nvim"
+alias tmux-save="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/save.sh"
+alias tmux-restore="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/restore.sh"
 
 if [ -z "$TMUX" ]; then
-    tmux attach || tmux new -s root
+	tmux attach || tmux new -s root
+	tmux-restore
 fi
