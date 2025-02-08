@@ -62,6 +62,8 @@ output {
     }
 }
 
+exec pactl set-source-mute @DEFAULT_SOURCE@ 1
+
 workspace 1
 exec $term
 exec protonvpn-app
