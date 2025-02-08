@@ -1,5 +1,4 @@
-{
-	"height": 25,
+{ "height": 25,
 	"spacing": 0,
 	"modules-left": [
 		"sway/workspaces",
@@ -183,7 +182,7 @@
 			"shutdown": "shutdown now",
 			"reboot": "reboot",
 			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
+			"logout": "swaymsg exit"
 		}
 	}
 }
