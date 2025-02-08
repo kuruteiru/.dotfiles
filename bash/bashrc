@@ -58,6 +58,6 @@ alias tmux-save="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/sa
 alias tmux-restore="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/restore.sh"
 
 if [ -z "$TMUX" ]; then
-	tmux attach || tmux new -s root
 	tmux-restore
+	tmux attach || tmux new -s root
 fi
