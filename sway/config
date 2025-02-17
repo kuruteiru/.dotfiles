@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font JetBrainsMonoNL NF 11
+font JetBrainsMonoNL NF Bold 10
 
 set $left h
 set $down j
