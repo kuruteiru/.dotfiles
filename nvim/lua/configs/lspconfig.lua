@@ -12,7 +12,8 @@ local servers = {
 	"jsonls",
 	"cssls",
 	"marksman",
-	"sqls"
+	"sqls",
+	"csharp_ls"
 
 	-- "css-variables-language-server",
 	-- "docker-compose-language-service",
