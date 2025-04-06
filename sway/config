@@ -15,6 +15,7 @@ set $monitor_left 'HP Inc. OMEN 27q CNC3291Q3M'
 set $monitor_right 'Lenovo Group Limited G27q-20 U6332BC5'
 
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
+set $screenshot grim -g "$(slurp)" ~/Pictures/screenshot_$(date +%F_%T).png | xargs swaymsg exec --
 
 input {
     type:keyboard {
@@ -64,7 +65,6 @@ output {
 
 exec pactl set-source-mute @DEFAULT_SOURCE@ 1
 
-workspace 1
 exec $term
 exec protonvpn-app
 
@@ -85,6 +85,8 @@ bindsym $mod+x kill
 
 # Start your launcher
 bindsym $mod+d exec $menu
+
+bindsym $mod+p exec $screenshot
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
