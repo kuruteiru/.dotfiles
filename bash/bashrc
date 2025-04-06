@@ -61,3 +61,6 @@ if [ -z "$TMUX" ]; then
 	tmux-restore
 	tmux attach || tmux new -s root
 fi
+
+export GTK_THEME=Adwaita:dark
+export QT_QPA_PLATFORMTHEME=qt5ct
