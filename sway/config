@@ -15,7 +15,7 @@ set $monitor_left 'HP Inc. OMEN 27q CNC3291Q3M'
 set $monitor_right 'Lenovo Group Limited G27q-20 U6332BC5'
 
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
-set $screenshot grim -g "$(slurp)" ~/Pictures/screenshot_$(date +%F_%T).png | xargs swaymsg exec --
+set $screenshot ~/scripts/screenshot.sh
 
 input {
     type:keyboard {
@@ -77,15 +77,9 @@ exec swayidle -w \
          timeout 600 'swaylock -f -c 000000' \
          before-sleep 'swaylock -f -c 000000'
 
-# Start a terminal
 bindsym $mod+t exec $term
-
-# Kill focused window
 bindsym $mod+x kill
-
-# Start your launcher
 bindsym $mod+d exec $menu
-
 bindsym $mod+p exec $screenshot
 
 # Drag floating windows by holding down $mod and left mouse button.
@@ -240,16 +234,9 @@ for_window [title="Picture-in-Picture"] {
     move down 500px
 }
 
-for_window [app_id="pavucontrol"] {
-    floating enable
-    move position center
-}
-
-for_window [app_id="pavucontrol-qt"] {
-    floating enable
-    move position center
-}
-
+for_window [app_id="pavucontrol"]		   floating enable, move position center
+for_window [app_id="pavucontrol-qt"]	   floating enable, move position center 
+for_window [app_id="zenity"]			   floating enable, resize set 800 600, move position center
 for_window [app_id="nm-connection-editor"] floating enable, resize set 600 400, move position center
 
 gaps inner 2
