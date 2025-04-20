@@ -105,11 +105,11 @@
 		"format-plugged": " {capacity}%",
 		"format-alt": "{icon} {time}",
 		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
+			" ",
+			" ",
+			" ",
+			" ",
+			" "
 		]
 	},
 	"power-profiles-daemon": {
@@ -165,9 +165,9 @@
 			"portable": "",
 			"car": "",
 			"default": [
-				"",
-				"",
-				""
+				" ",
+				" ",
+				" "
 			]
 		},
 		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
