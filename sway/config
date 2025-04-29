@@ -67,6 +67,7 @@ exec pactl set-source-mute @DEFAULT_SOURCE@ 1
 
 exec $term
 exec protonvpn-app
+exec ticktick
 
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
@@ -238,6 +239,7 @@ for_window [app_id="pavucontrol"]		   floating enable, move position center
 for_window [app_id="pavucontrol-qt"]	   floating enable, move position center 
 for_window [app_id="zenity"]			   floating enable, resize set 800 600, move position center
 for_window [app_id="nm-connection-editor"] floating enable, resize set 600 400, move position center
+for_window [class="ticktick"]			   floating enable, resize set 300 400, move position center, sticky enable
 
 gaps inner 2
 default_border pixel 2
