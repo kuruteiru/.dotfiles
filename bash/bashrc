@@ -52,7 +52,8 @@ ${PROMPT_COLOR} \$ ${RESET}\
 "
 
 EDITOR=/usr/bin/nvim
-alias la="ls -la"
+alias la="ls -lah"
+alias ll="ls -lh"
 alias vim="nvim"
 alias tmux-save="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/save.sh"
 alias tmux-restore="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/restore.sh"
