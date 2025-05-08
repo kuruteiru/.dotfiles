@@ -1,9 +1,9 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
-local nvlsp = require "nvchad.configs.lspconfig"
+local nvlsp     = require "nvchad.configs.lspconfig"
 
-local servers = {
+local servers   = {
 	"pyright",
 	"clangd",
 	"gopls",
@@ -13,19 +13,38 @@ local servers = {
 	"cssls",
 	"marksman",
 	"sqls",
-	"csharp_ls"
-
-	-- "css-variables-language-server",
-	-- "docker-compose-language-service",
-	-- "dockerfile-language-server",
-	-- "lua-language-server",
-	-- "cmake-language-server",
+	"csharp_ls",
+	"ts_ls",
+	"denols",
+	"tailwindcss",
+	-- "ltex",
+	"lua_ls",
+	"vuels",
 }
+--
+--
+-- lspconfig.ts_ls.setup {
+-- 	filetypes    = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "html" },
+-- 	on_attach    = nvlsp.on_attach,
+-- 	on_init      = nvlsp.on_init,
+-- 	capabilities = nvlsp.capabilities,
+-- }
+--
+-- lspconfig.html.setup {
+-- 	filetypes    = { "html" },
+-- 	init_options = {
+-- 		embeddedLanguages = { css = true, javascript = true, },
+-- 		provideFormatter = false,
+-- 	},
+-- 	on_attach    = nvlsp.on_attach,
+-- 	on_init      = nvlsp.on_init,
+-- 	capabilities = nvlsp.capabilities,
+-- }
 
-for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup {
-		on_attach = nvlsp.on_attach,
-		on_init = nvlsp.on_init,
+for _, name in ipairs(servers) do
+	lspconfig[name].setup {
+		on_attach    = nvlsp.on_attach,
+		on_init      = nvlsp.on_init,
 		capabilities = nvlsp.capabilities,
 	}
 end
