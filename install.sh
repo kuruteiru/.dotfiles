@@ -8,6 +8,7 @@ ln -sfT $DOTFILES_DIR/kitty ~/.config/kitty
 ln -sfT $DOTFILES_DIR/ghostty ~/.config/ghostty
 ln -sfT $DOTFILES_DIR/nvim ~/.config/nvim
 ln -sfT $DOTFILES_DIR/sway ~/.config/sway
+ln -sfT $DOTFILES_DIR/hypr ~/.config/hypr
 ln -sfT $DOTFILES_DIR/waybar ~/.config/waybar
 ln -sfT $DOTFILES_DIR/zathura ~/.config/zathura
 
