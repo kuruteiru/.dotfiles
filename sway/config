@@ -17,6 +17,8 @@ set $monitor_right 'Lenovo Group Limited G27q-20 U6332BC5'
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 set $screenshot ~/scripts/screenshot.sh
 
+seat seat0 xcursor_theme Adwaita 24
+
 input {
     type:keyboard {
         xkb_layout "us, cz(qwerty)"
