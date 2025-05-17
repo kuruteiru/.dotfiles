@@ -238,6 +238,7 @@ for_window [title="Picture-in-Picture"] {
     move down 500px
 }
 
+for_window [title="Open"]				   floating enable, move position center 
 for_window [app_id="pavucontrol"]		   floating enable, move position center
 for_window [app_id="pavucontrol-qt"]	   floating enable, move position center 
 for_window [app_id="zenity"]			   floating enable, resize set 800 600, move position center
