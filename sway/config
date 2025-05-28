@@ -248,9 +248,6 @@ for_window [app_id="nm-connection-editor"]	 floating enable, resize set 600 400,
 # for_window [class="ticktick"]				 floating enable, resize set 300 400, move position center, sticky enable
 
 for_window [app_id="net.thunderbird.Thunderbird" title=""]			  floating enable, resize set 400 200, sticky enable
-for_window [app_id="net.thunderbird.Thunderbird" title="New Message"] floating enable, resize set 400 200, sticky enable
-for_window [app_id="net.thunderbird.Thunderbird" title="Event"]		  floating enable, resize set 400 200, sticky enable
-for_window [app_id="net.thunderbird.Thunderbird" title="Reminder"]	  floating enable, resize set 400 200, sticky enable
 
 gaps inner 2
 default_border pixel 2
