@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# todo: use stow
+
 DOTFILES_DIR=~/.dotfiles
 
 ln -sfT $DOTFILES_DIR/bash/bashrc ~/.bashrc
