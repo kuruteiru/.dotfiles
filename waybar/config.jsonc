@@ -134,8 +134,8 @@
 		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
 		"tooltip-format-ethernet": "{ifname}",
 		"tooltip-format-disconnected": "disconnected",
-		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
-		//"on-click": "nm-connection-editor"
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"on-click": "nm-connection-editor"
 	},
 	"bluetooth": {
 		"format-on": "",
@@ -146,8 +146,8 @@
 		"tooltip-format": "{controller_alias} {controller_address} {num_connections}\nconnected",
 		"tooltip-format-connected": "{controller_alias} {controller_address}\n\n{num_connections} connected\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-		//"on-click": "wofi-bluetooth"
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+		"on-click": "wofi-bluetooth"
 	},
 	"pulseaudio": {
 		"scroll-step": 5,
