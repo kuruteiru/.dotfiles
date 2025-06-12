@@ -19,6 +19,7 @@ set $monitor_right 'Lenovo Group Limited G27q-20 U6332BC5'
 
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 set $screenshot ~/scripts/screenshot.sh
+set $mute ~/scripts/mute.sh
 
 seat seat0 xcursor_theme Adwaita 24
 
@@ -75,6 +76,7 @@ exec_always $clamshell
 exec $startup
 
 exec pactl set-source-mute @DEFAULT_SOURCE@ 1
+exec $mute
 
 exec swayidle -w \
          timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
