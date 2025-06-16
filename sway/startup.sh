@@ -4,7 +4,7 @@ ghostty &
 
 swaymsg assign [class="ticktick"] 2
 ticktick &
-# sleep 2
+sleep 2
 
 # swaymsg assign [app_id="zen"] 2
 # zen &
