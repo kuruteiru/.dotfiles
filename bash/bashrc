@@ -24,7 +24,7 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-source /usr/share/git-core/contrib/completion/git-prompt.sh
+source ~/.dotfiles/bash/git-prompt.sh
 LOVE='\[\e[38;2;235;111;146m\]'    # #eb6f92
 OVERLAY='\[\e[38;2;57;53;82m\]'     # #393552
 PINE='\[\e[38;2;62;143;176m\]'     # #3e8fb0
