@@ -2,6 +2,43 @@
 
 echo "sysinstall wip"
 
-# essential packages
-# dotfiles
 # nerdfont
+
+# essential packages (
+# git,
+# git-extras/git-core,
+# ghostty,
+# tmux,
+# nvim,
+# zen,
+# librewolf,
+# brave,
+# bitwarden,
+# protonvpn,
+# thunderbird,
+# ticktick,
+# spotify,
+# fzf,
+# btop,
+# fastfetch,
+# clang,
+# cmake,
+# grim,
+# slurp,
+# trash-cli,
+# libreoffice,
+# vlc
+# )
+
+# optional packages (
+# discord,
+# obsidian,
+# zathura,
+# dash,
+# blender
+# )
+
+# dotfiles
+# scripts (
+# screenshot.sh => check dependencies 
+# )
