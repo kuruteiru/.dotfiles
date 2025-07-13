@@ -66,28 +66,13 @@ alias sba="source ~/.bashrc"
 alias la="ls -lah"
 alias ll="ls -lh"
 alias vim="nvim"
+alias rm="trash-put"
 alias tmux-save="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/save.sh"
 alias tmux-restore="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/restore.sh"
-alias rm="trash-put"
-alias tl="trash-list"
-alias tr="trash-restore"
-alias te="trash-empty"
-alias ga="git add"
-alias gs="git status"
-alias gr="git restore"
-alias grs="git restore --staged"
-alias gc="git commit -m"
-alias gps="git push"
-alias gpl="git pull"
-alias gd="git diff"
 alias dfs="cd ~/.dotfiles && ll"
 alias rps="cd ~/repos && ll"
 
 if [ -z "$TMUX" ]; then
-	tmux-restore
 	tmux attach || tmux new -s root
+	# tmux-restore
 fi
-
-export GTK_THEME=Adwaita:dark
-export QT_QPA_PLATFORMTHEME=qt5ct
-export XCURSOR_SIZE=24
