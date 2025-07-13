@@ -25,11 +25,20 @@ fi
 unset rc
 
 source ~/.dotfiles/bash/git-prompt.sh
-LOVE='\[\e[38;2;235;111;146m\]'    # #eb6f92
-OVERLAY='\[\e[38;2;57;53;82m\]'     # #393552
-PINE='\[\e[38;2;62;143;176m\]'     # #3e8fb0
-RESET='\[\e[0m\]'
+BASE='\[\e[38;2;25;23;36m\]'				#191724
+SURFACE='\[\e[38;2;31;29;46m\]'				#1f1d2e
+OVERLAY='\[\e[38;2;57;53;82m\]'				#393552
+SUBTLE='\[\e[38;2;144;140;170m\]'			#908caa
+LOVE='\[\e[38;2;235;111;146m\]'				#eb6f92
+PINE='\[\e[38;2;62;143;176m\]'				#3e8fb0
+FOAM='\[\e[38;2;156;207;216m\]'				#9ccfd8
+IRIS='\[\e[38;2;196;167;231m\]'				#c4a7e7
+HIGHLIGHT_LOW='\[\e[38;2;33;32;46m\]'		#21202e
+HIGHLIGHT_MEDIUM='\[\e[38;2;64;61;82m\]'	#403d52
+HIGHLIGHT_HIGH='\[\e[38;2;82;79;103m\]'		#524f67
 PROMPT_COLOR='\[\e[38;2;42;39;63m\]'
+RESET='\[\e[0m\]'
+
 __git_ps1_path() {
 	if git rev-parse --git-dir > /dev/null 2>&1; then
 		local repo_name=$(basename $(git rev-parse --show-toplevel))
@@ -45,9 +54,10 @@ __git_ps1_path() {
 }
 
 PS1="\
-${OVERLAY}~> ${RESET}\
+${OVERLAY}> ${RESET}\
+${OVERLAY}[${LOVE}\$(whoami)${OVERLAY}]\
 ${OVERLAY}[${PINE}\$(__git_ps1_path)${OVERLAY}]\
-${OVERLAY}\$(__git_ps1 \" (${LOVE}%s${OVERLAY})\")${RESET}\
+${OVERLAY}\$(__git_ps1 \" (${HIGHLIGHT_MEDIUM}%s${OVERLAY})\")${RESET}\
 ${PROMPT_COLOR} \$ ${RESET}\
 "
 
