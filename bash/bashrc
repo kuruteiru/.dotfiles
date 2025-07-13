@@ -54,7 +54,7 @@ __git_ps1_path() {
 }
 
 PS1="\
-${OVERLAY}> ${RESET}\
+${OVERLAY}~> ${RESET}\
 ${OVERLAY}[${LOVE}\$(whoami)${OVERLAY}]\
 ${OVERLAY}[${PINE}\$(__git_ps1_path)${OVERLAY}]\
 ${OVERLAY}\$(__git_ps1 \" (${HIGHLIGHT_MEDIUM}%s${OVERLAY})\")${RESET}\
@@ -70,7 +70,7 @@ alias rm="trash-put"
 alias tmux-save="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/save.sh"
 alias tmux-restore="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/restore.sh"
 alias dfs="cd ~/.dotfiles && ll"
-alias rps="cd ~/repos && ll"
+alias dev="cd ~/dev && ll"
 
 if [ -z "$TMUX" ]; then
 	tmux attach || tmux new -s root
