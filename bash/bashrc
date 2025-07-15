@@ -58,7 +58,7 @@ ${OVERLAY}~> ${RESET}\
 ${OVERLAY}[${LOVE}\$(whoami)${OVERLAY}]\
 ${OVERLAY}[${PINE}\$(__git_ps1_path)${OVERLAY}]\
 ${OVERLAY}\$(__git_ps1 \" (${HIGHLIGHT_MEDIUM}%s${OVERLAY})\")${RESET}\
-${PROMPT_COLOR} \$ ${RESET}\
+${PROMPT_COLOR} \$$(printf "\u200A")${RESET}\
 "
 
 EDITOR=/usr/bin/nvim
