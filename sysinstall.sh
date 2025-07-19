@@ -4,6 +4,10 @@ echo "sysinstall wip"
 
 # nerdfont
 
+# /etc/default/grub
+# /etc/dracut.conf.d/10-bluetooth-pairing.conf
+# /etc/crypttab
+
 # essential packages (
 # git,
 # git-extras/git-core,
