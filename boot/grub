@@ -1,0 +1,8 @@
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="rd.luks.name=<luks-uuid>=cryptroot root=/dev/mapper/cryptroot rhgb quiet video=DP-9:2560x1440@144 video=DP-10:2560x1440@144 video=HDMI-A-1:2560x1440@144 video=eDP-1:2880x1800@60"
+GRUB_DISABLE_RECOVERY="true"
+GRUB_ENABLE_BLSCFG=true

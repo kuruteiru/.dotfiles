@@ -1,0 +1,1 @@
+cryptroot UUID=<luks-uuid> none discard
