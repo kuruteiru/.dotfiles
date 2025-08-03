@@ -81,4 +81,12 @@ alias ..="cd .."
 
 if [ -z "$TMUX" ]; then
 	tmux attach || tmux new -s root
+	command -v tmuxifier &> /dev/null && {
+		eval "$(tmuxifier init - &> /dev/null)"
+	}
 fi
+
+command -v zoxide &> /dev/null && {
+	eval "$(zoxide init bash --cmd z)"
+	alias z="zi"
+}
