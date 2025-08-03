@@ -65,6 +65,7 @@ EDITOR=/usr/bin/nvim
 alias sba="source ~/.bashrc"
 alias la="ls -lah"
 alias ll="ls -lh"
+alias treee="tree -L 2"
 alias vim="nvim"
 alias nano="nvim"
 alias rm="trash-put"
@@ -72,8 +73,12 @@ alias tmux-save="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/sa
 alias tmux-restore="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/restore.sh"
 alias dfs="cd ~/.dotfiles && ll"
 alias dev="cd ~/dev && ll"
+alias ......="cd ../../../../.."
+alias .....="cd ../../../.."
+alias ....="cd ../../.."
+alias ...="cd ../.."
+alias ..="cd .."
 
 if [ -z "$TMUX" ]; then
 	tmux attach || tmux new -s root
-	# tmux-restore
 fi
