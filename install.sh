@@ -27,6 +27,9 @@ command -v tmuxifier &> /dev/null && {
 	ln -sfT $DOTFILES_DIR/tmux/plugins/tmuxifier/bin/tmuxifier /usr/bin/tmuxifier
 }
 
+# dev window symlink
+ln -sfT $DOTFILES_DIR/tmux/dev.window.sh $DOTFILES_DIR/tmux/plugins/tmuxifier/layouts/dev.window.sh
+
 # needs to be used with root privilages, but when calling this script with sudo, the DOTFILES_DIR is /root/.dotfiles
 # sudo ln -sf $DOTFILES_DIR/dnf/dnf.conf /etc/dnf/dnf.conf
 
