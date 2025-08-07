@@ -15,20 +15,17 @@ ln -sfT $DOTFILES_DIR/hypr $CONFIG_DIR/hypr
 ln -sfT $DOTFILES_DIR/zathura $CONFIG_DIR/zathura
 
 ln -sfT $DOTFILES_DIR/tmux $CONFIG_DIR/tmux
-git rm $CONFIG_DIR/tmux/plugins/*
+git rm -rf $CONFIG_DIR/tmux/plugins/*
 git submodule add 
 git submodule add -f https://github.com/tmux-plugins/tpm.git tmux/plugins/tpm
 git submodule init
 git submodule update
-$(eval $XDG_CONFIG_HOME/tmux/plugins/tpm/bin/clean_plugins)
 ./tmux/plugins/tpm/bin/install_plugins
 ./tmux/plugins/tpm/bin/update_plugins
 command -v tmuxifier &> /dev/null && {
 	ln -sfT $DOTFILES_DIR/tmux/plugins/tmuxifier/bin/tmuxifier /usr/bin/tmuxifier
+	ln -sfT $DOTFILES_DIR/tmux/dev.window.sh $DOTFILES_DIR/tmux/plugins/tmuxifier/layouts/dev.window.sh
 }
-
-# dev window symlink
-ln -sfT $DOTFILES_DIR/tmux/dev.window.sh $DOTFILES_DIR/tmux/plugins/tmuxifier/layouts/dev.window.sh
 
 # needs to be used with root privilages, but when calling this script with sudo, the DOTFILES_DIR is /root/.dotfiles
 # sudo ln -sf $DOTFILES_DIR/dnf/dnf.conf /etc/dnf/dnf.conf
