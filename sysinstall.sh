@@ -11,8 +11,11 @@ echo "sysinstall wip"
 # essential packages (
 # git,
 # git-extras/git-core,
+# github-cli
 # ghostty,
 # tmux,
+# tmuxifier
+# zoxide
 # nvim,
 # zen,
 # librewolf,
