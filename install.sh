@@ -3,18 +3,29 @@
 # todo: use stow
 
 DOTFILES_DIR=~/.dotfiles
+CONFIG_DIR=~/.config
 
 ln -sfT $DOTFILES_DIR/bash/bashrc ~/.bashrc
-ln -sfT $DOTFILES_DIR/kitty ~/.config/kitty
-ln -sfT $DOTFILES_DIR/ghostty ~/.config/ghostty
-ln -sfT $DOTFILES_DIR/nvim ~/.config/nvim
-ln -sfT $DOTFILES_DIR/sway ~/.config/sway
-ln -sfT $DOTFILES_DIR/hypr ~/.config/hypr
-ln -sfT $DOTFILES_DIR/waybar ~/.config/waybar
-ln -sfT $DOTFILES_DIR/zathura ~/.config/zathura
+ln -sfT $DOTFILES_DIR/waybar $CONFIG_DIR/waybar
+ln -sfT $DOTFILES_DIR/ghostty $CONFIG_DIR/ghostty
+ln -sfT $DOTFILES_DIR/kitty $CONFIG_DIR/kitty
+ln -sfT $DOTFILES_DIR/nvim $CONFIG_DIR/nvim
+ln -sfT $DOTFILES_DIR/sway $CONFIG_DIR/sway
+ln -sfT $DOTFILES_DIR/hypr $CONFIG_DIR/hypr
+ln -sfT $DOTFILES_DIR/zathura $CONFIG_DIR/zathura
 
-ln -sfT $DOTFILES_DIR/tmux ~/.config/tmux
-ln -sfT $DOTFILES_DIR/tmux/plugins/tmuxifier/bin/tmuxifier /usr/bin/tmuxifier
+ln -sfT $DOTFILES_DIR/tmux $CONFIG_DIR/tmux
+git rm $CONFIG_DIR/tmux/plugins/*
+git submodule add 
+git submodule add -f https://github.com/tmux-plugins/tpm.git tmux/plugins/tpm
+git submodule init
+git submodule update
+$(eval $XDG_CONFIG_HOME/tmux/plugins/tpm/bin/clean_plugins)
+./tmux/plugins/tpm/bin/install_plugins
+./tmux/plugins/tpm/bin/update_plugins
+command -v tmuxifier &> /dev/null && {
+	ln -sfT $DOTFILES_DIR/tmux/plugins/tmuxifier/bin/tmuxifier /usr/bin/tmuxifier
+}
 
 # needs to be used with root privilages, but when calling this script with sudo, the DOTFILES_DIR is /root/.dotfiles
 # sudo ln -sf $DOTFILES_DIR/dnf/dnf.conf /etc/dnf/dnf.conf
