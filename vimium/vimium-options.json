@@ -1,0 +1,16 @@
+{
+  "keyMappings": "unmap J\nunmap K\nmap J nextTab\nmap K previousTab\nunmap t",
+  "scrollStepSize": 200,
+  "grabBackFocus": true,
+  "settingsVersion": "2.3",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://scratch.mit.edu/*"
+    }
+  ]
+}
