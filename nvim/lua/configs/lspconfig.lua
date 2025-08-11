@@ -20,6 +20,7 @@ local servers   = {
 	-- "ltex",
 	"lua_ls",
 	"vuels",
+	"bashls"
 }
 --
 --
