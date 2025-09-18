@@ -1,7 +1,6 @@
 {
   "keyMappings": "unmap J\nunmap K\nmap J nextTab\nmap K previousTab\nunmap t",
   "scrollStepSize": 200,
-  "grabBackFocus": true,
   "settingsVersion": "2.3",
   "exclusionRules": [
     {
