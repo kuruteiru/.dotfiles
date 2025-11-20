@@ -74,6 +74,7 @@ alias t="tmuxifier"
 alias dev="tmuxifier w dev"
 alias rm="trash-put"
 alias cwd="pwd | wl-copy"
+alias xo="xdg-open"
 alias tmux-save="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/save.sh"
 alias tmux-restore="tmux run-shell ~/.config/tmux/plugins/tmux-resurrect/scripts/restore.sh"
 alias dfs="cd ~/.dotfiles && ll"
@@ -102,9 +103,10 @@ export NVM_DIR="$HOME/.config/nvm"
 export JAVA_HOME=$HOME/opt/jdk-17
 export PATH=$JAVA_HOME/bin:$PATH
 
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+export CAPACITOR_ANDROID_STUDIO_PATH="/bin/android-studio-flatpak"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
-export PATH=$JAVA_HOME/bin:$PATH
