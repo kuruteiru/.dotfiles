@@ -22,7 +22,7 @@ local servers = {
   "vuels",
   "bashls",
   "angularls",
-  "jdtls"
+  -- "jdtls"
 }
 
 for _, name in ipairs(servers) do
