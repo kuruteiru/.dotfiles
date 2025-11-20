@@ -21,8 +21,8 @@ local servers = {
   "lua_ls",
   "vuels",
   "bashls",
-  "angularls", -- Angular LSP
-  "jdtls",     -- Java
+  "angularls",
+  "jdtls"
 }
 
 for _, name in ipairs(servers) do
