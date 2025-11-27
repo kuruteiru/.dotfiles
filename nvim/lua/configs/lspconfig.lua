@@ -1,34 +1,34 @@
-require("nvchad.configs.lspconfig").defaults()
-
-local lspconfig = require "lspconfig"
-local nvlsp     = require "nvchad.configs.lspconfig"
+local nvlsp = require "nvchad.configs.lspconfig"
 
 local servers = {
-  "pyright",
-  "clangd",
-  "gopls",
-  "eslint",
-  "html",
-  "jsonls",
-  "cssls",
-  "marksman",
-  "sqls",
-  "csharp_ls",
-  "ts_ls",
-  "denols",
-  "tailwindcss",
-  -- "ltex",
-  "lua_ls",
-  "vuels",
-  "bashls",
-  "angularls",
-  -- "jdtls"
+	"pyright",
+	"clangd",
+	"gopls",
+	"eslint",
+	"html",
+	"jsonls",
+	"cssls",
+	"marksman",
+	"sqls",
+	"csharp_ls",
+	"ts_ls",
+	"denols",
+	"tailwindcss",
+	"lua_ls",
+	"bashls",
+	"angularls",
+	-- "vuels",
+	-- "jdtls",
 }
 
 for _, name in ipairs(servers) do
-  lspconfig[name].setup {
-    on_attach    = nvlsp.on_attach,
-    on_init      = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
+	local cfg = vim.lsp.config[name]
+	if cfg then
+		cfg.on_attach    = nvlsp.on_attach
+		cfg.on_init      = nvlsp.on_init
+		cfg.capabilities = nvlsp.capabilities
+		vim.lsp.enable(name)
+	else
+		vim.notify("LSP config not found for " .. name, vim.log.levels.WARN)
+	end
 end
