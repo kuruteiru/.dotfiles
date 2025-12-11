@@ -17,6 +17,7 @@ local servers = {
 	"lua_ls",
 	"bashls",
 	"angularls",
+	"cmake",
 	-- "vuels",
 	-- "jdtls",
 }
