@@ -11,4 +11,4 @@ sleep 5
 # sleep 1
 
 # swaymsg [class="ticktick"] focus && swaymsg resize shrink width 1000px
-protonvpn-app &
+# protonvpn-app &
