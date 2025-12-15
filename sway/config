@@ -13,9 +13,9 @@ set $right l
 set $term ghostty
 set $browser zen
 
+set $monitor_left 'Lenovo Group Limited G27q-20 U6332BC5'
+set $monitor_right 'HP Inc. OMEN 27q CNC3291Q3M'
 set $laptop eDP-1
-set $monitor_left 'HP Inc. OMEN 27q CNC3291Q3M'
-set $monitor_right 'Lenovo Group Limited G27q-20 U6332BC5'
 
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 set $screenshot ~/scripts/screenshot.sh
