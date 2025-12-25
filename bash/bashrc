@@ -86,6 +86,79 @@ alias ....="cd ../../.."
 alias ...="cd ../.."
 alias ..="cd .."
 
+rma() {
+    cmd='trash-put'
+    target='.'
+    
+    if [ "$1" = "--force" ] || [ "$1" = "-f" ]; then
+        cmd='/bin/rm -rf'
+        shift 1
+    fi
+    
+    [ $# -ge 1 ] && target="$1"
+    
+    if [ ! -e "$target" ]; then
+        printf 'error: %s does not exist\n' "$target" >&2
+        return 1
+    fi
+    
+    if [ -f "$target" ]; then
+        $cmd -- "$target"
+        return $?
+    fi
+    
+    if [ ! -d "$target" ]; then
+        printf 'error: %s is not a file or directory\n' "$target" >&2
+        return 1
+    fi
+    
+    target=$(CDPATH= cd -P -- "$target" && pwd -P) || return 1
+    find "$target" -mindepth 1 -print0 | xargs -0 -r $cmd --
+}
+
+cpa() {
+    if [ "$#" -eq 1 ]; then
+        src="$1"
+        dest='.'
+    elif [ "$#" -eq 2 ]; then
+        src="$1"
+        dest="$2"
+    else
+        printf 'usage: cpa SRC [DEST]\n' >&2
+        return 2
+    fi
+    
+    if [ ! -e "$src" ]; then
+        printf 'error: %s does not exist\n' "$src" >&2
+        return 1
+    fi
+    
+    if [ -f "$src" ]; then
+        cp -a -- "$src" "$dest"
+        return $?
+    fi
+    
+    if [ ! -d "$src" ]; then
+        printf 'error: %s is not a file or directory\n' "$src" >&2
+        return 1
+    fi
+    
+    src=$(CDPATH= cd -P -- "$src" && pwd -P) || return 1
+    
+    if [ ! -d "$dest" ]; then
+        mkdir -p -- "$dest" || return 1
+    fi
+    
+    dest=$(CDPATH= cd -P -- "$dest" && pwd -P) || return 1
+    find "$src" -mindepth 1 -maxdepth 1 -print0 | while IFS= read -r -d '' item; do
+	if [ -d "$item" ]; then
+		item_abs=$(CDPATH= cd -P -- "$item" && pwd -P)
+		[ "$item_abs" = "$dest" ] && continue
+	fi
+	cp -a -- "$item" "$dest/"
+    done
+}
+
 if [ -z "$TMUX" ]; then
 	tmux attach || tmux new -s root
 	command -v tmuxifier &> /dev/null && {
@@ -101,8 +174,6 @@ command -v zoxide &> /dev/null && {
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export JAVA_HOME=$HOME/opt/jdk-17
-export PATH=$JAVA_HOME/bin:$PATH
 
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
