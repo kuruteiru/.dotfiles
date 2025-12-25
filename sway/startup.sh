@@ -1,5 +1,6 @@
 #!/bin/sh
 
+nm-applet &
 ghostty &
 
 swaymsg assign [class="ticktick"] 2
