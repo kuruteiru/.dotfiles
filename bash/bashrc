@@ -114,6 +114,9 @@ rma() {
     
     target=$(CDPATH= cd -P -- "$target" && pwd -P) || return 1
     find "$target" -mindepth 1 -print0 | xargs -0 -r $cmd --
+	if [ "$target" != "$(pwd)" ]; then
+		$cmd -- "$target"
+	fi
 }
 
 cpa() {
