@@ -178,6 +178,7 @@ export NVM_DIR="$HOME/.config/nvm"
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 export CAPACITOR_ANDROID_STUDIO_PATH="/bin/android-studio-flatpak"
+export ANDROID_AVD_HOME="$HOME/.var/app/com.google.AndroidStudio/config/.android/avd"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
