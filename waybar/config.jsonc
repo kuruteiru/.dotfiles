@@ -1,4 +1,5 @@
-{ "height": 25,
+{
+	"height": 25,
 	"spacing": 0,
 	"modules-left": [
 		"sway/workspaces",
@@ -19,6 +20,7 @@
 		"network",
 		"sway/language",
 		"power-profiles-daemon",
+		"custom/tlp",
 		"battery",
 		"tray",
 		"clock",
@@ -134,7 +136,13 @@
 		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
 		"tooltip-format-ethernet": "{ifname}",
 		"tooltip-format-disconnected": "disconnected",
-		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-icons": [
+			"󰤯",
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
 		"on-click": "nm-connection-editor"
 	},
 	"bluetooth": {
@@ -184,5 +192,12 @@
 			"suspend": "systemctl suspend",
 			"logout": "swaymsg exit"
 		}
+	},
+	"custom/tlp": {
+		"exec": "tlp-switch waybar",
+		"return-type": "json",
+		"interval": 10,
+		"tooltip": true,
+		"format": "{}"
 	}
 }

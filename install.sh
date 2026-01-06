@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# todo: use stow
+# todo: use stow & add all dotfiles
 
 DOTFILES_DIR=~/.dotfiles
 CONFIG_DIR=~/.config
@@ -29,6 +29,9 @@ command -v tmuxifier &> /dev/null && {
 
 # needs to be used with root privilages, but when calling this script with sudo, the DOTFILES_DIR is /root/.dotfiles
 # sudo ln -sf $DOTFILES_DIR/dnf/dnf.conf /etc/dnf/dnf.conf
+#
+# sudo ln -s $DOTFILES_DIR/tlp/tlp-switch.sh /bin/tlp-switch
+# sudo ln -s $DOTFILES_DIR/tlp/tlp-switch.sh /bin/tlps
 
 if [[ -d "$FIREFOX_PROFILES_DIR" ]]; then
   for PROFILE in "$FIREFOX_PROFILES_DIR"/*-default; do

@@ -100,7 +100,7 @@ button:hover {
 #wireplumber,
 #cpu,
 #idle_inhibitor,
-#battery,
+#custom-tlp,
 #clock,
 #tray {
 	border-left: 2px solid black;
@@ -161,3 +161,51 @@ button:hover {
 /*    animation-iteration-count: infinite;*/
 /*    animation-direction: alternate;*/
 /*}*/
+
+#custom-tlp {
+    padding: 0 5px 0 10px;
+    /* margin: 0 2px; */
+    /* border-radius: 8px; */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+/**/
+/* #custom-tlp:hover { */
+/*     background-color: rgba(255, 255, 255, 0.1); */
+/* } */
+/**/
+/* Performance profile - Red/Orange theme */
+/* #custom-tlp.performance { */
+/*     color: #ff6b6b; */
+/*     background-color: rgba(255, 107, 107, 0.15); */
+/* } */
+/**/
+/* #custom-tlp.performance:hover { */
+/*     background-color: rgba(255, 107, 107, 0.25); */
+/* } */
+/**/
+/* Balanced profile - Blue/Neutral theme */
+/* #custom-tlp.balanced { */
+/*     color: #4dabf7; */
+/*     background-color: rgba(77, 171, 247, 0.15); */
+/* } */
+/**/
+/* #custom-tlp.balanced:hover { */
+/*     background-color: rgba(77, 171, 247, 0.25); */
+/* } */
+/**/
+/* Low-power profile - Green theme */
+/* #custom-tlp.low-power { */
+/*     color: #51cf66; */
+/*     background-color: rgba(81, 207, 102, 0.15); */
+/* } */
+/**/
+/* #custom-tlp.low-power:hover { */
+/*     background-color: rgba(81, 207, 102, 0.25); */
+/* } */
+/**/
+/* Unknown state - Gray theme */
+/* #custom-tlp.unknown { */
+/*     color: #868e96; */
+/*     background-color: rgba(134, 142, 150, 0.15); */
+/* } */
