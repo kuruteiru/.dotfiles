@@ -87,6 +87,7 @@ bindsym $mod+t exec $term
 bindsym $mod+x kill
 bindsym $mod+d exec $menu
 bindsym $mod+p exec $screenshot
+bindsym $mod+q exec pkill -USR1 waybar
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
