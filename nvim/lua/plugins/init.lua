@@ -24,7 +24,7 @@ return {
     "mfussenegger/nvim-jdtls",
     ft = { "java" },
     config = function()
-      require("custom.jdtls").setup()
+      require("configs.jdtls").setup()
     end
   }
 }
