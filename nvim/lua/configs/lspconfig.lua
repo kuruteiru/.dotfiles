@@ -18,6 +18,7 @@ local servers = {
 	"bashls",
 	"angularls",
 	"cmake",
+	"rust_analyzer",
 	-- "vuels",
 	-- "jdtls",
 }
