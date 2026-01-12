@@ -12,7 +12,7 @@ local servers = {
 	"sqls",
 	"csharp_ls",
 	"ts_ls",
-	"denols",
+	-- "denols",
 	"tailwindcss",
 	"lua_ls",
 	"bashls",
