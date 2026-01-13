@@ -10,8 +10,9 @@ set $down j
 set $up k
 set $right l
 
-set $term ghostty
+set $terminal ghostty
 set $browser zen
+set $filemanager nautilus
 
 set $monitor_left 'Lenovo Group Limited G27q-20 U6332BC5'
 set $monitor_right 'HP Inc. OMEN 27q CNC3291Q3M'
@@ -83,9 +84,10 @@ exec swayidle -w \
          timeout 600 'swaylock -f -c 000000' \
          before-sleep 'swaylock -f -c 000000'
 
-bindsym $mod+t exec $term
 bindsym $mod+x kill
 bindsym $mod+d exec $menu
+bindsym $mod+t exec $terminal
+bindsym $mod+e exec $filemanager
 bindsym $mod+p exec $screenshot
 bindsym $mod+q exec pkill -USR1 waybar
 
@@ -146,9 +148,9 @@ bindsym $mod+b splith
 bindsym $mod+v splitv
 
 # Switch the current container between different layout styles
-bindsym $mod+s layout stacking
+bindsym $mod+s layout toggle split
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+g layout stacking
 
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
